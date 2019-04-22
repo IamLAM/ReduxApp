@@ -1,26 +1,28 @@
+const LOGIN='LOGIN'
+const LOGOUT='LOGOUT'
+
 const defaultState = {
  authenticated: false
 };
 
 const reducer = (state = defaultState, action) => {
   // change code below this line
-  switch(action.type){
-    case 'LOGIN':
-      return{
-         authenticated:true
-      }
-    
+  switch (action.type) {
 
-    case 'LOGOUT':
-    return{
-      authenticated:false
-    }
-    
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
 
     default:
-    return defaultState
-    
-}
+      return state;
+
+  }
   // change code above this line
 };
 
@@ -28,12 +30,12 @@ const store = Redux.createStore(reducer);
 
 const loginUser = () => {
   return {
-    type: 'LOGIN'
+    type: LOGIN
   }
 };
 
 const logoutUser = () => {
   return {
-    type: 'LOGOUT'
+    type: LOGOUT
   }
 };
