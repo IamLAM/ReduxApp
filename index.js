@@ -4,5 +4,11 @@ const reducer = (state = 5) => {
   
   const store=Redux.createStore(reducer);
   const currentState=store.getState();
+
+
+let action={
+  type:'LOGIN'
+  
+  }
   
   
