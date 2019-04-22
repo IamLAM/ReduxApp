@@ -6,7 +6,7 @@ const reducer = (state = 5) => {
   const currentState=store.getState();
 
 
-let action={
+let loginAction={
   type:'LOGIN'
   
   }
@@ -16,4 +16,5 @@ let action={
   return action
 }
   
+store.dispatch(loginAction());
   
