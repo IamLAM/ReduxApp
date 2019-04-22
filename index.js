@@ -39,3 +39,26 @@ const logoutUser = () => {
     type: LOGOUT
   }
 };
+
+//counter
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+    if (action.type === INCREMENT) {
+        return (state += 1);
+    } else if (action.type === DECREMENT) {
+        return (state -= 1);
+    }
+    return state;
+}
+
+const incAction = () => {
+    return {type: INCREMENT};
+}
+
+const decAction = () => {
+    return {type: DECREMENT};
+}
+
+const store = Redux.createStore(counterReducer);
