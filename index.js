@@ -1,20 +1,23 @@
-const reducer = (state = 5) => {
-    return state;
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+  // change code below this line
+  if (action.type === 'LOGIN') {
+    return  {
+    login: true
+    } 
+    } else {
+      return defaultState
+  };
+  // change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
   }
-  
-  const store=Redux.createStore(reducer);
-  const currentState=store.getState();
-
-
-let loginAction={
-  type:'LOGIN'
-  
-  }
-
-  function actionCreator()
-{
-  return action
-}
-  
-store.dispatch(loginAction());
-  
+};
